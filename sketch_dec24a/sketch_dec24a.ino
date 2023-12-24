@@ -4,17 +4,18 @@
 #include <MQ2.h>
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
-#include <HTTPClient.h>
+#include <HTTPClient.h>
+#define DHTPIN 33    //DHT 11 pin 33 
+#define DHTTYPE DHT11 //初始化DHT11
+#define BUZZER_PIN 4 //蜂鳴器 PIN 4
+#define RESET_BUTTON_PIN 17 //重置按鈕 PIN 17
+#define RELAY_PIN 16 //繼電器 PIN 16
+#define MQ_PIN 39 //MQ-2瓦斯感應器 PIN 39
+#define GAS_THRESHOLD 200 //發出警報的瓦斯數值
+#define RESET_THRESHOLD 500 //重置按鈕閥值
 
-#define DHTPIN 33
-#define DHTTYPE DHT11
-#define BUZZER_PIN 4
-#define RESET_BUTTON_PIN 17
-#define RELAY_PIN 16
-#define MQ_PIN 39
-#define GAS_THRESHOLD 200
-#define RESET_THRESHOLD 500
 
+//蜂鳴器警報階段讀秒
 const int STAGE1_DURATION = 1000;  // 1 秒
 const int STAGE2_DURATION = 1000;
 const int STAGE3_DURATION = 1000;
